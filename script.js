@@ -5,7 +5,7 @@ const gvData = {
     {
       name: "Ifran Yousuf Shihab",
       position: "President",
-      page: "shihab.php",
+      page: "shihab.html",
       image: "images/shihab.jpeg", // Added image path
     },
   ],

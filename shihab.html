@@ -10,21 +10,21 @@
     />
     <style>
       /* Profile Container */
-              :root {
-            --primary-dark: #0a4d3c;
-            --primary: #1a936f;
-            --primary-light: #88d498;
-            --primary-extra-light: #d1f0db;
-            --accent: #f3e9d2;
-            --light: #f9f9f9;
-            --dark: #333;
-            --white: #ffffff;
-            --nav-bg: rgba(255, 255, 255, 0.95);
-            --nav-shadow: 0 4px 20px rgba(10, 77, 60, 0.1);
-            --transition: all 0.3s ease;
-            --border-radius: 8px;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+      :root {
+        --primary-dark: #0a4d3c;
+        --primary: #1a936f;
+        --primary-light: #88d498;
+        --primary-extra-light: #d1f0db;
+        --accent: #f3e9d2;
+        --light: #f9f9f9;
+        --dark: #333;
+        --white: #ffffff;
+        --nav-bg: rgba(255, 255, 255, 0.95);
+        --nav-shadow: 0 4px 20px rgba(10, 77, 60, 0.1);
+        --transition: all 0.3s ease;
+        --border-radius: 8px;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
       .profile-container {
         max-width: 1200px;
         margin: 3rem auto;
@@ -41,36 +41,38 @@
       }
 
       .profile-image-container {
-            flex: 0 0 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .profile-image {
-            width: 30vw;
-            height: 35vw;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            position: relative;
-            background: linear-gradient(45deg, var(--primary-extra-light), var(--primary-light));
-            margin-bottom: 1.5rem;
-        }
-        
-        .profile-image img {
-            width: 30vw;
-            height: 35vw;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .profile-image:hover img {
-            transform: scale(1.05);
-        }
-        
+        flex: 0 0 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
+      .profile-image {
+        width: 30vw;
+        height: 35vw;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        position: relative;
+        background: linear-gradient(
+          45deg,
+          var(--primary-extra-light),
+          var(--primary-light)
+        );
+        margin-bottom: 1.5rem;
+      }
+
+      .profile-image img {
+        width: 30vw;
+        height: 35vw;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .profile-image:hover img {
+        transform: scale(1.05);
+      }
 
       .profile-info {
         flex: 1;
@@ -147,7 +149,7 @@
         background-color: var(--primary-extra-light);
         color: var(--primary-dark);
         border-radius: 50%;
-        text-decoration:none;
+        text-decoration: none;
         transition: var(--transition);
       }
 
@@ -252,14 +254,12 @@
     </style>
   </head>
   <body>
-    <?php 
-    include 'head.php'
-    ?>
+    <div w3-include-html="head.html"></div>
     <!-- Profile Content -->
     <main class="profile-container">
       <div class="profile-header">
         <div class="profile-image">
-          <img src="images/shihab.jpeg" alt="SHihab">
+          <img src="images/shihab.jpeg" alt="SHihab" />
         </div>
 
         <div class="profile-info">
@@ -281,7 +281,7 @@
               <span>Fazlul Haque Hall</span>
             </div>
             <div>
-             <i class="fa-solid fa-droplet" style="color: #f61335;"></i>
+              <i class="fa-solid fa-droplet" style="color: #f61335"></i>
               <span>O(+ve)</span>
             </div>
           </div>
@@ -296,8 +296,6 @@
       </div>
     </main>
 
-    <?php 
-    include 'foot.php'
-    ?>
+    <div w3-include-html="foot.html"></div>
   </body>
 </html>
