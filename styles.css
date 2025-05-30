@@ -1,0 +1,732 @@
+/* Updated styles.css with Enhanced Design (V3 - No Nav Underline/Dot) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  /* New, more elegant green and white palette */
+  --primary-dark: #073a2e; /* Very deep, sophisticated forest green */
+  --primary: #156d4e; /* Rich, elegant green */
+  --primary-light: #52a77f; /* Muted, softer green */
+  --primary-extra-light: #e6f3ed; /* Very pale, creamy green */
+  --accent-gold: #c2a771; /* A subtle, elegant gold/cream accent - kept for other uses if any, or can be removed */
+  --bg-white: #fcfcfc; /* A slightly warm, off-white background */
+  --text-dark: #2a2a2a; /* Soft black for text */
+  --text-light: #6a6a6a; /* Medium gray for secondary text */
+  --white: #ffffff;
+
+  /* Refined shadows and transitions */
+  --nav-bg: rgba(216, 240, 230, 0.99); /* Nearly opaque white for nav */
+  --nav-shadow: 0 6px 30px rgba(7, 58, 46, 0.06); /* Lighter, broader, more subtle shadow */
+  --card-shadow: 0 10px 40px rgba(7, 58, 46, 0.07); /* Deeper but softer card shadow */
+  --transition-fast: all 0.3s ease-out;
+  --transition-medium: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth ease-out-quad */
+  --border-radius-large: 25px; /* More rounded */
+  --border-radius-medium: 15px;
+  --border-radius-small: 8px;
+}
+
+body {
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  line-height: 1.7; /* Increased line height for readability */
+  overflow-x: hidden;
+}
+
+/* Header Styles - Navbar focus */
+header {
+  background-color: var(--nav-bg);
+  padding: 1.2rem 2.8rem; /* Increased padding for more substantial feel */
+  box-shadow: var(--nav-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px); /* Stronger, smoother blur */
+  border-bottom: 1px solid var(--primary-extra-light); /* Subtle bottom border */
+}
+
+.header-container {
+  max-width: 1440px; /* Slightly wider container */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* More space */
+  text-decoration: none;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9vh; /* Even larger icon */
+  height: 9vh; /* Even larger icon */
+  padding: 0%;
+  transition: var(--transition-medium);
+}
+.logo-icon:hover {
+  transform: rotate(10deg) scale(1.05); /* Fun hover effect */
+}
+
+.logo-icon i {
+  color: var(--white);
+  font-size: 2rem; /* Adjusted icon size */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text {
+  font-size: 2.2rem; /* Larger, more impactful text */
+  font-weight: 800; /* Extra bold */
+  color: var(--primary-dark);
+  letter-spacing: -1px; /* Tighter spacing for modern look */
+  text-transform: uppercase; /* Uppercase for elegance */
+}
+
+.logo-text span {
+  color: var(--primary); /* Maintain primary green */
+  font-weight: 700;
+}
+
+/* Navigation - The star of the show */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-dark);
+  font-size: 2.2rem; /* Larger toggle icon */
+  cursor: pointer;
+  padding: 10px;
+  border-radius: var(--border-radius-small);
+  transition: var(--transition-fast);
+}
+
+.nav-toggle:hover {
+  background-color: var(--primary-extra-light);
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem; /* Even more space between links */
+}
+
+nav a {
+  color: var(--text-dark); /* Darker text for better contrast on white nav */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.15rem; /* Slightly larger font size */
+  padding: 0.9rem 1.6rem; /* More padding */
+  border-radius: var(--border-radius-medium); /* More rounded */
+  transition: var(--transition-medium);
+  position: relative;
+  /* Removed overflow: hidden; as ::before is gone */
+}
+
+/* Removed nav a::before (green underline on hover) */
+
+nav a:hover {
+  background-color: var(
+    --primary-extra-light
+  ); /* Soft green background on hover */
+  color: var(--primary-dark); /* Dark green text on hover */
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 4px 15px rgba(7, 58, 46, 0.1); /* Subtle shadow on hover */
+}
+
+nav a.active {
+  background-color: var(--primary); /* Solid primary green for active */
+  color: var(--white);
+  box-shadow: 0 8px 25px rgba(21, 109, 78, 0.35); /* Stronger, deeper shadow */
+  transform: translateY(-3px);
+}
+
+/* Removed nav a.active::after (gold dot) and @keyframes pulse */
+
+/* Hero Section - Elevated design */
+.hero {
+  background: linear-gradient(
+    145deg,
+    var(--primary-dark) 0%,
+    var(--primary) 70%,
+    var(--primary-light) 100%
+  ); /* More complex gradient */
+  color: var(--white);
+  padding: 7rem 3rem; /* Even more padding */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: var(--border-radius-large);
+  margin-bottom: 4rem; /* More space below hero */
+  box-shadow: 0 15px 40px rgba(7, 58, 46, 0.15); /* Soft shadow for the entire hero */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%23156d4e' fill-opacity='0.15' d='M42.1,-54.3C53.1,-42.7,59.2,-25.7,61.8,-7.3C64.5,11.1,63.7,30.9,55.5,45.7C47.3,60.5,31.8,70.4,14.6,74.7C-2.7,79,-21.7,77.8,-36.5,69.2C-51.3,60.7,-62,44.7,-66.2,27.1C-70.5,9.4,-68.3,-9.9,-61.2,-26.4C-54.1,-42.9,-42.2,-56.7,-27.8,-67.1C-13.5,-77.6,3.3,-84.7,19.1,-82.3C34.9,-79.9,49.7,-68,42.1,-54.3Z' transform='translate(100 100)'/%3E%3C/svg%3E");
+  background-size: 400px; /* Larger pattern */
+  opacity: 0.5; /* Stronger opacity */
+  animation: backgroundPan 60s linear infinite alternate; /* Slow pan animation */
+}
+
+@keyframes backgroundPan {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.hero-content {
+  max-width: 950px; /* Wider content area */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem; /* Even larger, more majestic heading */
+  margin-bottom: 1.8rem;
+  font-weight: 800;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  font-size: 1.45rem; /* Larger, more inviting paragraph text */
+  opacity: 0.98; /* Almost fully opaque */
+  margin-bottom: 3.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Main Content */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5rem 3rem; /* More padding */
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 5rem; /* More space below title */
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 3.2rem; /* Larger title */
+  color: var(--primary-dark);
+  display: inline-block;
+  padding-bottom: 18px; /* More padding */
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20rem; /* Wider underline */
+  height: 7px; /* Thicker underline */
+  background: var(--primary);
+  border-radius: 4px;
+  box-shadow: 0 3px 12px rgba(21, 109, 78, 0.3);
+}
+
+/* gv Grid - Enhanced cards */
+.gv-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(360px, 1fr)
+  ); /* Larger min width */
+  gap: 3.5rem; /* More gap */
+  margin-bottom: 7rem; /* More space below grid */
+}
+
+.gv-card {
+  background: var(--white);
+  border-radius: var(--border-radius-large); /* Consistent large radius */
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-medium);
+  position: relative;
+  border: 1px solid var(--primary-extra-light); /* Subtle border */
+  text-decoration: none;
+  color: inherit;
+}
+
+.gv-card:hover {
+  transform: translateY(-20px); /* More pronounced lift */
+  box-shadow: 0 25px 60px rgba(7, 58, 46, 0.2); /* Stronger hover shadow */
+  border-color: var(--primary-light);
+}
+
+.card-img {
+  height: 350px; /* Taller image area */
+  overflow: hidden;
+  background: linear-gradient(
+    45deg,
+    var(--primary-extra-light),
+    var(--primary-light)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid var(--primary-extra-light); /* Subtle border below image */
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease; /* Smooth zoom on hover */
+}
+
+.gv-card:hover .card-img img {
+  transform: scale(1.08); /* More significant zoom on image hover */
+}
+
+.card-img i {
+  font-size: 9rem; /* Even larger icon */
+  color: var(--primary-light); /* Lighter green for icon */
+  opacity: 0.6;
+}
+
+.card-img::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Taller curve */
+  background: var(--white);
+  border-radius: 50% 50% 0 0;
+  filter: drop-shadow(
+    0 -8px 15px rgba(0, 0, 0, 0.08)
+  ); /* More pronounced shadow */
+}
+
+.card-content {
+  padding: 3rem; /* More padding */
+  position: relative;
+}
+
+.card-content h3 {
+  color: var(--primary-dark);
+  margin-bottom: 0.8rem;
+  font-size: 2rem; /* Larger heading */
+  font-weight: 700;
+}
+
+.card-content .position {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: block;
+  font-size: 1.25rem;
+}
+
+.card-content .department {
+  margin-bottom: 1.8rem;
+  display: block;
+  color: var(--text-light); /* Use text-light variable */
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 35px; /* More space for icon */
+}
+
+.card-content .department::before {
+  content: "\f02d";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-light); /* Lighter green for icon */
+  font-size: 1.1rem;
+}
+
+.contact-info {
+  margin-top: 2.5rem; /* More space */
+  padding-top: 2.5rem;
+  border-top: 1px dashed var(--primary-extra-light); /* Dashed border */
+}
+
+.contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* More gap */
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
+  transition: var(--transition-fast);
+}
+
+.contact-info div:hover {
+  color: var(--primary-dark);
+}
+
+.contact-info i {
+  width: 30px; /* Larger icon area */
+  text-align: center;
+  color: var(--primary);
+  font-size: 1.2rem; /* Larger icon */
+}
+
+/* Footer - Elegant and consistent */
+footer {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 6rem 3rem 2.5rem; /* More top padding */
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: var(--border-radius-large);
+  border-top-right-radius: var(--border-radius-large);
+  box-shadow: 0 -15px 40px rgba(7, 58, 46, 0.15); /* Soft top shadow */
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%23073a2e' fill-opacity='0.18' d='M42.1,-54.3C53.1,-42.7,59.2,-25.7,61.8,-7.3C64.5,11.1,63.7,30.9,55.5,45.7C47.3,60.5,31.8,70.4,14.6,74.7C-2.7,79,-21.7,77.8,-36.5,69.2C-51.3,60.7,-62,44.7,-66.2,27.1C-70.5,9.4,-68.3,-9.9,-61.2,-26.4C-54.1,-42.9,-42.2,-56.7,-27.8,-67.1C-13.5,-77.6,3.3,-84.7,19.1,-82.3C34.9,-79.9,49.7,-68,42.1,-54.3Z' transform='translate(100 100)'/%3E%3C/svg%3E");
+  background-size: 400px;
+  opacity: 0.6;
+  animation: backgroundPan 60s linear infinite reverse alternate; /* Reverse pan for contrast */
+}
+
+.footer-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  ); /* Slightly larger min-width */
+  gap: 4rem; /* More gap */
+  position: relative;
+  z-index: 1;
+}
+
+.footer-col h3 {
+  font-size: 1.7rem; /* Slightly larger heading */
+  margin-bottom: 2.2rem;
+  position: relative;
+  padding-bottom: 15px;
+  color: var(--primary-light); /* Lighter green for headings */
+}
+
+.footer-col h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 17vw; /* Wider underline */
+  height: 4px; /* Thicker underline */
+  background: white; /* Gold underline for elegance */
+  border-radius: 3px;
+  box-shadow: 0 3px 12px rgba(124, 232, 171, 0.4);
+}
+
+.footer-col p {
+  margin-bottom: 1.4rem;
+  opacity: 0.95;
+  line-height: 1.9; /* More comfortable line height */
+  color: rgba(255, 255, 255, 0.95); /* Near-white text */
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.08rem;
+}
+
+.footer-col a:hover {
+  color: var(--accent-gold); /* Gold on hover */
+  padding-left: 10px; /* More subtle padding increase */
+  opacity: 1;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5vw; /* Larger icons */
+  height: 5vw; /* Larger icons */
+  background: rgba(255, 255, 255, 0.2); /* More opaque background */
+  color: var(--white);
+  border-radius: 50%;
+  transition: var(--transition-medium);
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a:hover {
+  transform: translateY(-7px) scale(1.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.footer-bottom {
+  max-width: 1440px;
+  margin: 5rem auto 0;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  opacity: 0.9;
+  font-size: 1.05rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #4fe7d0;
+}
+.footer-bottom a:hover {
+  text-decoration: none;
+  color: #319687;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .gv-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 6rem 2.5rem;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+  .section-title h2 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 2rem;
+  }
+
+  .nav-toggle {
+    display: block;
+    font-size: 2rem;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 0;
+    box-shadow: var(--nav-shadow);
+    border-top: 1px solid var(--primary-extra-light);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 1.5rem 2.5rem; /* More generous mobile link padding */
+    border-radius: 0;
+    font-size: 1.1rem;
+  }
+
+  nav ul li a:hover {
+    background: var(--primary-extra-light);
+    color: var(--primary-dark);
+  }
+
+  /* Removed nav a.active::after (hide dot on mobile for cleaner look) */
+
+  .hero {
+    padding: 5rem 2rem;
+    border-bottom-left-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    padding: 4rem 2rem;
+  }
+
+  .section-title h2 {
+    font-size: 2.5rem;
+  }
+
+  .gv-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  footer {
+    padding: 5rem 2rem 2rem;
+    border-top-left-radius: var(--border-radius-medium);
+    border-top-right-radius: var(--border-radius-medium);
+  }
+}
+
+@media (max-width: 576px) {
+  .header-container {
+    padding: 0;
+  }
+
+  .logo-text {
+    font-size: 1.9rem;
+    letter-spacing: -0.5px;
+  }
+
+  .logo-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-icon i {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+  }
+
+  .search-container input {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.1rem;
+  }
+
+  .search-container button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title h2 {
+    font-size: 2.2rem;
+  }
+
+  .gv-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .gv-card {
+    border-radius: var(--border-radius-medium);
+  }
+
+  .card-content {
+    padding: 2.5rem;
+  }
+
+  .card-img {
+    height: 300px;
+  }
+
+  .card-img::before {
+    height: 50px;
+  }
+
+  .contact-info {
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  footer {
+    padding: 4.5rem 1.5rem 1.5rem;
+  }
+  .social-links a {
+    width: 10vw; /* Larger icons */
+    height: 10vw; /* Larger icons */
+  }
+}
+
+/* Animation for cards */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gv-card {
+  animation: fadeInSlideUp 0.8s ease-out; /* Slower, smoother animation */
+  animation-fill-mode: both;
+}

@@ -1,0 +1,361 @@
+// script.js
+// gv data
+const gvData = {
+  president: [
+    {
+      name: "Ifran Yousuf Shihab",
+      position: "President",
+      page: "shihab.php",
+      image: "images/shihab.jpeg", // Added image path
+    },
+  ],
+  g_secretary: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "taskia.php",
+      image: "images/taskia.jpg", // Added image path
+    },
+  ],
+  o_s: [
+    {
+      name: "Ramisha Islam Ripa ",
+      position: "Assistant organizing Secretary",
+      page: "blank.html",
+      image: "images/ramisha.jpg", // Added image path
+    },
+  ],
+  tre: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  mp_s: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  of_s: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  ic_s: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  swa_s: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  c_s: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  s_s: [
+    {
+      name: "Muhammad Ishmamul Hoque",
+      position: "Sports Secretary",
+      page: "blank.html",
+      image: "images/ishmam.jpg", // Added image path
+    },
+  ],
+  er_s: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  h_s: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  hw_s: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+  em: [
+    {
+      name: "Taskia Khatun ",
+      position: "General Secretary",
+      page: "blank.html",
+      image: "images/khairun.jpg", // Added image path
+    },
+  ],
+};
+
+// Initialize the page
+document.addEventListener("DOMContentLoaded", () => {
+  // Render gv cards
+  rendergvCards("president");
+  rendergvCards("g_secretary");
+  rendergvCards("o_s");
+  rendergvCards("tre");
+  rendergvCards("mp_s");
+  rendergvCards("of_s");
+  rendergvCards("ic_s");
+  rendergvCards("swa_s");
+  rendergvCards("c_s");
+  rendergvCards("s_s");
+  rendergvCards("er_s");
+  rendergvCards("h_s");
+  rendergvCards("hw_s");
+  rendergvCards("em");
+
+  // Mobile Navigation Toggle
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  // Navigation active state
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.forEach((item) => item.classList.remove("active"));
+      link.classList.add("active");
+
+      // Close mobile menu after selection
+      if (navMenu.classList.contains("show")) {
+        navMenu.classList.remove("show");
+      }
+    });
+  });
+
+  // Search functionality
+  const searchInput = document.getElementById("search-input");
+  const searchBtn = document.getElementById("search-btn");
+
+  searchBtn.addEventListener("click", performSearch);
+  searchInput.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+      performSearch();
+    }
+  });
+
+  // gv card hover effect
+  const gvCards = document.querySelectorAll(".gv-card");
+  gvCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-10px)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0)";
+    });
+  });
+});
+
+// Render gv cards for a section
+function rendergvCards(section) {
+  const container = document.querySelector(`#${section} .gv-grid`);
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  gvData[section].forEach((person) => {
+    const card = document.createElement("div");
+    card.className = "gv-card";
+    card.innerHTML = `
+            <a href="${person.page}" style="text-decoration:none">
+            <div class="card-img">
+                ${
+                  person.image
+                    ? `<img src="${person.image}" alt="${person.name}">`
+                    : '<i class="fa-solid fa-user"></i>'
+                }
+            </div>
+            <div class="card-content">
+                <h3>${person.name}</h3>
+                <span class="position">${person.position}</span>
+            </div>
+            </a>
+        `;
+    container.appendChild(card);
+  });
+}
+
+// Search function
+function performSearch() {
+  const searchTerm = document
+    .getElementById("search-input")
+    .value.toLowerCase();
+  if (!searchTerm) return;
+
+  // Combine all gv into one array
+  const allgv = [...gvData.executive, ...gvData.teachers, ...gvData.students];
+
+  // Filter matching results
+  const results = allgv.filter(
+    (person) =>
+      person.name.toLowerCase().includes(searchTerm) ||
+      person.position.toLowerCase().includes(searchTerm) ||
+      person.department.toLowerCase().includes(searchTerm)
+  );
+
+  if (results.length > 0) {
+    // Create a modal with search results
+    const modal = document.createElement("div");
+    modal.className = "search-modal";
+    modal.innerHTML = `
+            <div class="modal-content">
+                <h2>Search Results</h2>
+                <div class="search-results">
+                    ${results
+                      .map(
+                        (person) => `
+                        <div class="search-result">
+                            <div class="search-result-img">
+                                ${
+                                  person.image
+                                    ? `<img src="${person.image}" alt="${person.name}">`
+                                    : '<i class="fas fa-user-graduate"></i>'
+                                }
+                            </div>
+                            <div class="search-result-info">
+                                <h3>${person.name}</h3>
+                                <p><strong>${person.position}</strong> | ${
+                          person.department
+                        }</p>
+                                <p>${person.email} | ${person.phone}</p>
+                            </div>
+                        </div>
+                    `
+                      )
+                      .join("")}
+                </div>
+                <button class="close-modal">Close</button>
+            </div>
+        `;
+
+    document.body.appendChild(modal);
+
+    // Add modal styles
+    const style = document.createElement("style");
+    style.innerHTML = `
+            .search-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            }
+
+            .modal-content {
+                background: white;
+                padding: 2rem;
+                border-radius: 10px;
+                max-width: 600px;
+                width: 90%;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+
+            .search-results {
+                margin: 1.5rem 0;
+            }
+
+            .search-result {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+                border-bottom: 1px solid #eee;
+            }
+
+            .search-result:last-child {
+                border-bottom: none;
+            }
+
+            .search-result-img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #f0f0f0; /* Placeholder background */
+            }
+
+            .search-result-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .search-result-img .fas {
+                font-size: 2.5rem;
+                color: #ccc;
+            }
+
+            .search-result-info h3 {
+                color: var(--primary-dark);
+                margin-bottom: 0.25rem;
+            }
+
+            .close-modal {
+                background: var(--primary);
+                color: white;
+                border: none;
+                padding: 0.75rem 1.5rem;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: var(--transition);
+            }
+
+            .close-modal:hover {
+                background: var(--primary-dark);
+            }
+        `;
+    document.head.appendChild(style);
+
+    // Close modal functionality
+    const closeBtn = modal.querySelector(".close-modal");
+    closeBtn.addEventListener("click", () => {
+      document.body.removeChild(modal);
+      document.head.removeChild(style);
+    });
+  } else {
+    alert("No gv members found matching your search.");
+  }
+}
