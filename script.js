@@ -5,7 +5,7 @@ const gvData = {
     {
       name: "Ifran Yousuf Shihab",
       position: "President",
-      page: "shihab.html",
+      page: "profile.php",
       image: "images/shihab.jpeg", // Added image path
     },
   ],
@@ -15,6 +15,12 @@ const gvData = {
       position: "General Secretary",
       page: "taskia.php",
       image: "images/taskia.jpg", // Added image path
+    },
+    {
+      name: "Israt Jahan Rimu",
+      position: "Assistant General Secretary",
+      page: "profile.php",
+      image: "images/rimu.jpg", // Added image path
     },
   ],
   o_s: [
@@ -99,10 +105,10 @@ const gvData = {
   ],
   hw_s: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      name: "Apsari Wasim",
+      position: "Human Welfare Secretary",
+      page: "profile",
+      image: "images/apsari.jpg", // Added image path
     },
   ],
   em: [
@@ -190,7 +196,9 @@ function rendergvCards(section) {
     const card = document.createElement("div");
     card.className = "gv-card";
     card.innerHTML = `
-            <a href="${person.page}" style="text-decoration:none">
+            <a href="profile.php?name=${person.name}&position=${
+      person.position
+    }" style="text-decoration:none">
             <div class="card-img">
                 ${
                   person.image

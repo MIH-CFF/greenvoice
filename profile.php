@@ -254,35 +254,50 @@
     </style>
   </head>
   <body>
-    <div w3-include-html="head.html"></div>
+  <?php
+    include 'head.php';
+    include 'config.php';
+    if (isset($_GET['name'])){
+      $name=$_GET['name'];
+      $position=$_GET['position'];
+      $sql="select* from member_info where name='".$name."' and position='".$position."';";
+      if($res=mysqli_query($conn,$sql)){
+        $row=mysqli_fetch_assoc($res);
+      }
+    }
+    else{
+      echo '<script>window.location.href ="index.php";</script>';
+                                     exit;
+    }
+    ?>
     <!-- Profile Content -->
     <main class="profile-container">
       <div class="profile-header">
         <div class="profile-image">
-          <img src="images/shihab.jpeg" alt="SHihab" />
+          <img src=<?php echo'"'.$row['picture'].'"';?> alt=<?php echo "'".$row['name']."'";?> />
         </div>
 
         <div class="profile-info">
-          <h1>Ifran Yousuf Shihab</h1>
-          <p class="position">President</p>
-          <p class="department">Faculty of Agriculture</p>
+          <h1><?php echo $row['name'];?></h1>
+          <p class="position"><?php echo $row['position'];?></p>
+          <p class="department"><?php echo $row['faculty'];?></p>
 
           <div class="contact-info">
             <div>
               <i class="fas fa-envelope"></i>
-              <span>if.shihab151182@gmail.com</span>
+              <span><?php echo $row['mail'];?></span>
             </div>
             <div>
               <i class="fas fa-phone"></i>
-              <span>01759398928</span>
+              <span><?php echo $row['mobile'];?></span>
             </div>
             <div>
               <i class="fas fa-building"></i>
-              <span>Fazlul Haque Hall</span>
+              <span><?php echo $row['hall'];?></span>
             </div>
             <div>
               <i class="fa-solid fa-droplet" style="color: #f61335"></i>
-              <span>O(+ve)</span>
+              <span><?php echo $row['blood_grp'];?></span>
             </div>
           </div>
 
@@ -296,6 +311,8 @@
       </div>
     </main>
 
-    <div w3-include-html="foot.html"></div>
+    <?php
+    include 'foot.php';
+    ?>
   </body>
 </html>

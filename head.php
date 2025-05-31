@@ -19,7 +19,7 @@
             <img src="images/logo.svg" />
             <!-- <i class="fas fa-graduation-cap"></i> -->
           </div>
-          <div class="logo-text">GREEN<span>VOICE</span></div>
+          <div class="logo-text">GREEN<span class="logo-text-2">VOICE</span></div>
         </div>
 
         <button class="nav-toggle">
@@ -28,7 +28,7 @@
 
         <nav>
           <ul id="nav-menu">
-            <li><a href="index.html" class="active">Executive Committee</a></li>
+            <li><a href="index.php" class="active">Executive Committee</a></li>
             <li><a href="#teachers">Teacher Advisors</a></li>
             <li><a href="#students">Student Advisors</a></li>
           </ul>

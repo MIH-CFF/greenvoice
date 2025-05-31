@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div w3-include-html="head.html"></div>
+   <?php
+    include 'head.php';
+    ?>
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
@@ -168,6 +170,8 @@
         </div>
       </section>
     </main>
-    <div w3-include-html="foot.html"></div>
+    <?php
+    include 'foot.php';
+    ?>
   </body>
 </html>
