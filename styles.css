@@ -264,13 +264,13 @@ nav a.active {
 }
 
 .gv-card {
-  background: var(--white);
+  background: rgba(238, 166, 157, 0.2);
   border-radius: var(--border-radius-large); /* Consistent large radius */
   overflow: hidden;
   box-shadow: var(--card-shadow);
   transition: var(--transition-medium);
   position: relative;
-  border: 1px solid var(--primary-extra-light); /* Subtle border */
+  /* border: 1px solid var(--primary-extra-light); Subtle border */
   text-decoration: none;
   color: inherit;
 }
@@ -320,7 +320,8 @@ nav a.active {
   left: 0;
   width: 100%;
   height: 60px; /* Taller curve */
-  background: var(--white);
+  background: #b3ffde;
+  background: linear-gradient(135deg, #a8e6cf, #56ab2f, #004e00);
   border-radius: 50% 50% 0 0;
   filter: drop-shadow(
     0 -8px 15px rgba(0, 0, 0, 0.08)

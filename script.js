@@ -5,118 +5,128 @@ const gvData = {
     {
       name: "Ifran Yousuf Shihab",
       position: "President",
-      page: "profile.php",
-      image: "images/shihab.jpeg", // Added image path
+      image: "images/shihab.jpg",
+    },
+    {
+      name: "MD. Zillur Rahman Samrat",
+      position: "Vice President",
+      image: "images/samrat.jpg",
     },
   ],
   g_secretary: [
     {
-      name: "Taskia Khatun ",
+      name: "Taskia Khatun",
       position: "General Secretary",
-      page: "taskia.php",
-      image: "images/taskia.jpg", // Added image path
+      image: "images/taskia.jpg",
     },
     {
       name: "Israt Jahan Rimu",
       position: "Assistant General Secretary",
-      page: "profile.php",
-      image: "images/rimu.jpg", // Added image path
+      image: "images/rimu.jpg",
+    },
+    {
+      name: "Md Al Jubayer",
+      position: "Assistant General Secretary",
+      image: "images/jubayer.jpg",
     },
   ],
   o_s: [
     {
-      name: "Ramisha Islam Ripa ",
-      position: "Assistant organizing Secretary",
-      page: "blank.html",
-      image: "images/ramisha.jpg", // Added image path
+      name: "Md. Shafiqul Islam",
+      position: "Organizing Secretary",
+      image: "images/shafiqul.jpg",
+    },
+    {
+      name: "Ramisha Islam Ripa",
+      position: "Organizing Secretary",
+      image: "images/ramisha.jpg",
     },
   ],
   tre: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      name: "Nafisa Rahman",
+      position: "Treasurer",
+      image: "images/nafisa.jpg",
+    },
+    {
+      name: "Shamima Yesmin",
+      position: "Treasurer",
+      image: "images/yesmin.jpg",
     },
   ],
   mp_s: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      name: "Lamyah Islam",
+      position: "Media and Publication Secretary",
+      image: "images/lamyah.jpg",
     },
   ],
   of_s: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      name: "Maimuna Tabassum",
+      position: "Office Secretary",
+      image: "images/maimuna.jpg",
     },
   ],
   ic_s: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      name: "Mahmuda Monowar Lorin",
+      position: "Information and Communication Secretary",
+      image: "images/lorin.jpg",
+    },
+    {
+      name: "Mst. Rabeya Sarker",
+      position: "Information and Communication Secretary",
+      image: "images/rabeya.jpg",
     },
   ],
   swa_s: [
     {
-      name: "Taskia Khatun ",
+      name: "Taskia Khatun",
       position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      image: "images/khairun.jpg",
     },
   ],
   c_s: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      name: "Anol Krishnodip",
+      position: "Cultural Secretary",
+      image: "images/anol.jpg",
     },
   ],
   s_s: [
     {
       name: "Muhammad Ishmamul Hoque",
       position: "Sports Secretary",
-      page: "blank.html",
-      image: "images/ishmam.jpg", // Added image path
+      image: "images/ishmam.jpg",
     },
   ],
   er_s: [
     {
       name: "Taskia Khatun ",
       position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      image: "images/khairun.jpg",
     },
   ],
   h_s: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      name: "Mst. Mahmuda Khatun Sadia",
+      position: "Hospitality Secretary",
+      image: "images/sadia.jpg",
     },
   ],
   hw_s: [
     {
       name: "Apsari Wasim",
       position: "Human Welfare Secretary",
-      page: "profile",
-      image: "images/apsari.jpg", // Added image path
+      image: "images/apsari.jpg",
     },
   ],
   em: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      page: "blank.html",
-      image: "images/khairun.jpg", // Added image path
+      name: "Aribah Tasnim Surovi",
+      position: "Executive Member",
+      image: "images/surovi.jpg",
     },
   ],
 };

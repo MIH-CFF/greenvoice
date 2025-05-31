@@ -38,18 +38,17 @@
         <div class="footer-col">
           <h3>Contact Information</h3>
           <p>
-            <i class="fas fa-map-marker-alt"></i> 123 Education Lane, Academic
-            City
+            <i class="fas fa-map-marker-alt"></i> Green Voice, BAU
           </p>
-          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-          <p><i class="fas fa-envelope"></i> info@university.edu</p>
-          <p><i class="fas fa-clock"></i> Monday-Friday: 8:00 AM - 5:00 PM</p>
+          <p><i class="fas fa-phone"></i> XXXXXXXXXX</p>
+          <p><i class="fas fa-envelope"></i> greenvoicebau@gmail.com</p>
+          <p><i class="fas fa-clock"></i> Sunday-Tuesday: 5:00 PM - 8:00 PM</p>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p> @2025 GREEN VOICE. All rights reserved. Developed by 
-        <a href="#">Muhammad Ishmamul Hoque</a></p>
+        <a href="https://www.linkedin.com/in/muhammad-ishmamul-hoque-03a882284/" target="_blank">Muhammad Ishmamul Hoque</a></p>
       </div>
     </footer>
 

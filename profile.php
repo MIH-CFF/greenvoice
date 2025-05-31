@@ -137,25 +137,29 @@
 
       .social-links-main {
         display: flex;
-        gap: 1rem;
+        justify-content:center;
+        align-content:center;
+        gap: 2rem;
       }
 
       .social-links-main a {
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 1.5rem;
         width: 5vw;
         height: 5vw;
-        background-color: var(--primary-extra-light);
-        color: var(--primary-dark);
         border-radius: 50%;
         text-decoration: none;
+        background: var(--primary);
+        color: var(--white);
         transition: var(--transition);
       }
 
       .social-links-main a:hover {
-        background: var(--primary);
-        color: var(--white);
+        
+        background-color: var(--primary-extra-light);
+        color: var(--primary-dark);
         transform: translateY(-3px);
       }
 
@@ -220,7 +224,7 @@
 
         .profile-image {
           flex: 0 0 auto;
-          max-width: 300px;
+          max-width: 500px;
           margin: 0 auto;
         }
       }
@@ -250,6 +254,11 @@
         .profile-info .position {
           font-size: 1.2rem;
         }
+        .social-links-main a {
+          font-size:1.2rem;
+        width: 10vw;
+        height: 10vw;
+      }
       }
     </style>
   </head>
@@ -264,6 +273,10 @@
       if($res=mysqli_query($conn,$sql)){
         $row=mysqli_fetch_assoc($res);
       }
+      else{
+      echo '<script>window.location.href ="index.php";</script>';
+                                     exit;
+    }
     }
     else{
       echo '<script>window.location.href ="index.php";</script>';
@@ -302,10 +315,10 @@
           </div>
 
           <div class="social-links-main">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-researchgate"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href=<?php echo "'".$row['fb']."'";?> target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href=<?php echo "'".$row['tweet']."'";?> target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href=<?php echo "'".$row['ln']."'";?> target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href=<?php echo "'".$row['insta']."'";?> target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
