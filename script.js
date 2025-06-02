@@ -12,12 +12,27 @@ const gvData = {
       position: "Vice President",
       image: "images/samrat.jpg",
     },
+    {
+      name: "Susmita Podder",
+      position: "Vice President",
+      image: "images/susmita.jpg",
+    },
+    {
+      name: "Sezuti Sarkar",
+      position: "Vice President",
+      image: "images/sezuti.jpg",
+    },
   ],
   g_secretary: [
     {
       name: "Taskia Khatun",
       position: "General Secretary",
       image: "images/taskia.jpg",
+    },
+    {
+      name: "Khairun Nahar",
+      position: "Assistant General Secretary",
+      image: "images/laka.jpg",
     },
     {
       name: "Israt Jahan Rimu",
@@ -41,6 +56,16 @@ const gvData = {
       position: "Organizing Secretary",
       image: "images/ramisha.jpg",
     },
+    {
+      name: "Nashmin Ferdaush",
+      position: "Organizing Secretary",
+      image: "images/nashmin.jpg",
+    },
+    {
+      name: "Md. Mine Hossain",
+      position: "Organizing Secretary",
+      image: "images/mine.jpg",
+    },
   ],
   tre: [
     {
@@ -60,12 +85,22 @@ const gvData = {
       position: "Media and Publication Secretary",
       image: "images/lamyah.jpg",
     },
+    {
+      name: "Musarrat Jahan Richie",
+      position: "Media and Publication Secretary",
+      image: "images/richie.jpg",
+    },
   ],
   of_s: [
     {
       name: "Maimuna Tabassum",
       position: "Office Secretary",
       image: "images/maimuna.jpg",
+    },
+    {
+      name: "Md. Farhadul Islam Fahad",
+      position: "Office Secretary",
+      image: "images/fahad.jpg",
     },
   ],
   ic_s: [
@@ -82,9 +117,9 @@ const gvData = {
   ],
   swa_s: [
     {
-      name: "Taskia Khatun",
-      position: "General Secretary",
-      image: "images/khairun.jpg",
+      name: "Shibu Majumder",
+      position: "Social Welfare Affairs Secretary",
+      image: "images/shibu.jpg",
     },
   ],
   c_s: [
@@ -93,6 +128,11 @@ const gvData = {
       position: "Cultural Secretary",
       image: "images/anol.jpg",
     },
+    {
+      name: "Dipannita Roy Pritha",
+      position: "Cultural Secretary",
+      image: "images/dipannita.jpg",
+    },
   ],
   s_s: [
     {
@@ -100,12 +140,17 @@ const gvData = {
       position: "Sports Secretary",
       image: "images/ishmam.jpg",
     },
+    {
+      name: "Sanjida Akter",
+      position: "Sports Secretary",
+      image: "images/sanzida.jpg",
+    },
   ],
   er_s: [
     {
-      name: "Taskia Khatun ",
-      position: "General Secretary",
-      image: "images/khairun.jpg",
+      name: "K. M. Asif Al-Rehman Shammo",
+      position: "Education and Research Secretary",
+      image: "images/shammo.jpg",
     },
   ],
   h_s: [
@@ -113,6 +158,23 @@ const gvData = {
       name: "Mst. Mahmuda Khatun Sadia",
       position: "Hospitality Secretary",
       image: "images/sadia.jpg",
+    },
+    {
+      name: "Md Asadujjaman",
+      position: "Hospitality Secretary",
+      image: "images/asad.jpg",
+    },
+  ],
+  rd_s: [
+    {
+      name: "Parmita Saha Setu",
+      position: "Relief and Disaster Management Secretary",
+      image: "images/setu.jpg",
+    },
+    {
+      name: "Mst. Salma Akter",
+      position: "Relief and Disaster Management Secretary",
+      image: "images/salma.jpg",
     },
   ],
   hw_s: [
@@ -124,9 +186,19 @@ const gvData = {
   ],
   em: [
     {
+      name: "Arnab Saha",
+      position: "Executive Member",
+      image: "images/arnob.jpg",
+    },
+    {
       name: "Aribah Tasnim Surovi",
       position: "Executive Member",
       image: "images/surovi.jpg",
+    },
+    {
+      name: "Arpita Rani Noyoni",
+      position: "Executive Member",
+      image: "images/arpita.jpg",
     },
   ],
 };
@@ -159,27 +231,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Navigation active state
   const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.forEach((item) => item.classList.remove("active"));
-      link.classList.add("active");
+  const currentPath = window.location.pathname.split("/").pop(); // removes preceding folders if any
 
-      // Close mobile menu after selection
+  navLinks.forEach((link) => {
+    // Extract href path (e.g., "about.html")
+    const linkPath = link.getAttribute("href");
+
+    // Check if this link matches current page
+    if (
+      linkPath === currentPath ||
+      (linkPath === "index.html" && currentPath === "")
+    ) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+
+    // Optional: Close mobile menu when a link is clicked
+    link.addEventListener("click", () => {
       if (navMenu.classList.contains("show")) {
         navMenu.classList.remove("show");
       }
     });
-  });
-
-  // Search functionality
-  const searchInput = document.getElementById("search-input");
-  const searchBtn = document.getElementById("search-btn");
-
-  searchBtn.addEventListener("click", performSearch);
-  searchInput.addEventListener("keyup", (e) => {
-    if (e.key === "Enter") {
-      performSearch();
-    }
   });
 
   // gv card hover effect

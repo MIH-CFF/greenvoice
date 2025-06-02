@@ -28,9 +28,9 @@
 
         <nav>
           <ul id="nav-menu">
-            <li><a href="index.php" class="active">Executive Committee</a></li>
-            <li><a href="#teachers">Teacher Advisors</a></li>
-            <li><a href="#students">Student Advisors</a></li>
+            <li><a href="index.php">Executive Committee</a></li>
+            <li><a href="teacher.php">Teacher Advisors</a></li>
+            <li><a href="student.php">Student Advisors</a></li>
           </ul>
         </nav>
       </div>

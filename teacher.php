@@ -17,7 +17,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Executive Committee</h1>
+        <h1>Teacher Advisors</h1>
         <p>
           Meet our excellent executive committee members who are dedicating
           their excellence for the cause of nature
@@ -41,7 +41,7 @@
       <!-- Teacher Advisors Section -->
       <section id="g_secretary">
         <div class="section-title">
-          <h2>General Secretary Panel</h2>
+          <h2>General secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -52,7 +52,7 @@
       <!-- Student Advisors Section -->
       <section id="o_s">
         <div class="section-title">
-          <h2>Organizing Secretary Panel</h2>
+          <h2>Organizing secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -62,7 +62,7 @@
 
       <section id="tre">
         <div class="section-title">
-          <h2>Treasurer Panel</h2>
+          <h2>Treasurer panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -72,7 +72,7 @@
 
       <section id="mp_s">
         <div class="section-title">
-          <h2>Media & Publications Secretary Panel</h2>
+          <h2>Media & Publications secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -82,7 +82,7 @@
 
       <section id="of_s">
         <div class="section-title">
-          <h2>Office Secretary Panel</h2>
+          <h2>Office secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -92,7 +92,7 @@
 
       <section id="ic_s">
         <div class="section-title">
-          <h2>Information & Communication Secretary Panel</h2>
+          <h2>Information & Communication secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -102,7 +102,7 @@
 
       <section id="swa_s">
         <div class="section-title">
-          <h2>Social Welfare Affairs Secretary Panel</h2>
+          <h2>Social Welfare Affairs secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -112,7 +112,7 @@
 
       <section id="c_s">
         <div class="section-title">
-          <h2>Cultural Secretary Panel</h2>
+          <h2>Cultural secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -122,7 +122,7 @@
 
       <section id="s_s">
         <div class="section-title">
-          <h2>Sports Secretary Panel</h2>
+          <h2>Sports secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -132,7 +132,7 @@
 
       <section id="er_s">
         <div class="section-title">
-          <h2>Education & Research Secretary Panel</h2>
+          <h2>Education & Research secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -142,7 +142,7 @@
 
       <section id="h_s">
         <div class="section-title">
-          <h2>Hospitality Secretary Panel</h2>
+          <h2>Hospital secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -152,7 +152,7 @@
 
       <section id="hw_s">
         <div class="section-title">
-          <h2>Human Welfare Secretary Panel</h2>
+          <h2>Human Welfare secretary panel</h2>
         </div>
 
         <div class="gv-grid">
@@ -162,7 +162,7 @@
 
       <section id="em">
         <div class="section-title">
-          <h2>Executive Member Panel</h2>
+          <h2>Executive Member panel</h2>
         </div>
 
         <div class="gv-grid">
