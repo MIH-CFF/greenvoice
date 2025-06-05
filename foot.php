@@ -30,7 +30,7 @@
           <h3>Quick Links</h3>
           <p><a href="index.php">Executive Committee</a></p>
           <p><a href="teacher.php">Teacher Advisors</a></p>
-          <p><a href="#students">Student Advisors</a></p>
+          <p><a href="student.php">Student Advisors</a></p>
           <p><a href="#">Green Voice Resources</a></p>
           <p><a href="#">Contact Directory</a></p>
         </div>
@@ -50,7 +50,5 @@
         <p> @2025 GREEN VOICE. All rights reserved. Developed by 
         <a href="https://www.linkedin.com/in/muhammad-ishmamul-hoque-03a882284/" target="_blank">Muhammad Ishmamul Hoque</a></p>
       </div>
-    </footer>
-        <script src="script.js"></script>
   </body>
 </html>

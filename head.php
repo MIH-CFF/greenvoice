@@ -19,7 +19,7 @@
             <img src="images/logo.svg" />
             <!-- <i class="fas fa-graduation-cap"></i> -->
           </div>
-          <div class="logo-text">GREEN<span class="logo-text-2">VOICE</span></div>
+          <div class="logo-text">GREEN<span class="logo-text-2">VOICE</span><span class="logo-text-3">OF</span>BAU</div>
         </div>
 
         <button class="nav-toggle">

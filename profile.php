@@ -68,10 +68,11 @@
         object-fit: cover;
         display: block;
         transition: transform 0.5s ease;
+        border: 15px solid rgb(17, 142, 111);
       }
 
       .profile-image:hover img {
-        transform: scale(1.05);
+        border: 15px solid  #0a4d3c;
       }
 
       .profile-info {
@@ -327,5 +328,7 @@
     <?php
     include 'foot.php';
     ?>
+    </footer>
+        <script src="script.js"></script>
   </body>
 </html>

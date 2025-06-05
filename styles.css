@@ -67,10 +67,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 9vh; /* Even larger icon */
-  height: 9vh; /* Even larger icon */
+  width: 5.5vw; /* Even larger icon */
+  height: 5.5vw; /* Even larger icon */
   padding: 0%;
   transition: var(--transition-medium);
+}
+.logo-icon img {
+  width: 100%; /* Even larger icon */
+  height: 100%; /* Even larger icon */
 }
 .logo-icon:hover {
   transform: rotate(10deg) scale(1.05); /* Fun hover effect */
@@ -87,13 +91,19 @@ header {
   font-weight: 800; /* Extra bold */
   color: var(--primary-dark);
   letter-spacing: -1px; /* Tighter spacing for modern look */
-  text-transform: uppercase; /* Uppercase for elegance */
 }
 
-.logo-text span {
+.logo-text-2 {
   color: red; /* Maintain primary green */
   font-weight: 700;
   padding-left: 5px;
+  padding-right: 5px;
+}
+.logo-text-3 {
+  color: black; /* Maintain primary green */
+  font-weight: 700;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 /* Navigation - The star of the show */
@@ -118,7 +128,7 @@ header {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 2rem; /* Even more space between links */
+  gap: 1rem; /* Even more space between links */
 }
 
 nav a {
@@ -126,7 +136,7 @@ nav a {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.15rem; /* Slightly larger font size */
-  padding: 0.9rem 1.6rem; /* More padding */
+  padding: 0.7rem 1rem; /* More padding */
   border-radius: var(--border-radius-medium); /* More rounded */
   transition: var(--transition-medium);
   position: relative;
@@ -151,9 +161,6 @@ nav a.active {
   transform: translateY(-3px);
 }
 
-/* Removed nav a.active::after (gold dot) and @keyframes pulse */
-
-/* Hero Section - Elevated design */
 .hero {
   background: linear-gradient(
     145deg,
@@ -560,7 +567,7 @@ footer::before {
     width: 100%;
     background: var(--nav-bg);
     flex-direction: column;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     gap: 0;
     box-shadow: var(--nav-shadow);
     border-top: 1px solid var(--primary-extra-light);
@@ -576,7 +583,7 @@ footer::before {
 
   nav ul li a {
     display: block;
-    padding: 1.5rem 2.5rem; /* More generous mobile link padding */
+    padding: 1.5rem 1rem; /* More generous mobile link padding */
     border-radius: 0;
     font-size: 1.1rem;
   }
@@ -640,6 +647,10 @@ footer::before {
   .logo-icon {
     width: 50px;
     height: 50px;
+  }
+  .logo-icon img {
+    width: 100%; /* Even larger icon */
+    height: 100%; /* Even larger icon */
   }
 
   .logo-icon i {

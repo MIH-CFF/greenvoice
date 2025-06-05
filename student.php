@@ -17,10 +17,9 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Executive Committee</h1>
+        <h1>Student Advisors</h1>
         <p>
-          Meet our excellent executive committee members who are dedicating
-          their excellence for the cause of nature
+          Meet our awesome student advisors — always ready with thoughtful advice and fresh perspectives that help guide us on our journey toward a more sustainable and nature-aware future
         </p>
       </div>
     </section>
@@ -28,9 +27,9 @@
     <!-- Main Content -->
     <main class="container">
       <!-- Executive Committee Section -->
-      <section id="president">
+      <section id="s_ad">
         <div class="section-title">
-          <h2>President Panel</h2>
+          <h2>Student Advisors</h2>
         </div>
 
         <div class="gv-grid">
