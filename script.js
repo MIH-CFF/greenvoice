@@ -143,7 +143,7 @@ const gvData = {
     {
       name: "Sanjida Akter",
       position: "Sports Secretary",
-      image: "images/sanzida.jpg",
+      image: "images/sanjida.jpg",
     },
   ],
   er_s: [

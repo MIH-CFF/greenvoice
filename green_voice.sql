@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2025 at 01:19 PM
+-- Generation Time: Jan 16, 2026 at 08:15 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,57 @@ SET time_zone = "+00:00";
 --
 -- Database: `green_voice`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `event_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `short_description` text NOT NULL,
+  `full_description` text NOT NULL,
+  `event_date` date NOT NULL,
+  `event_time` time DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `status` enum('upcoming','past') DEFAULT 'upcoming',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`event_id`, `title`, `short_description`, `full_description`, `event_date`, `event_time`, `location`, `image`, `status`, `created_at`) VALUES
+(1, 'Tree Plantation Drive', 'Join us in planting trees to make our city greener.', 'This tree plantation drive aims to plant over 1000 trees across urban areas. Volunteers will be provided with saplings and tools.', '2026-02-10', '09:00:00', 'Central Park, Dhaka', 'events/tree_plantation.jpg', 'upcoming', '2026-01-16 06:11:28'),
+(2, 'Beach Cleanup Campaign', 'A community effort to clean our beaches.', 'We are organizing a beach cleanup campaign to remove plastic waste and raise environmental awareness among locals.', '2025-12-15', '07:30:00', 'Cox’s Bazar Beach', 'events/beach_cleanup.jpg', 'past', '2026-01-16 06:11:28'),
+(3, 'Climate Awareness Seminar', 'Learn about climate change and how to fight it.', 'Environmental experts will discuss climate change, global warming, and sustainable practices in this seminar.', '2026-03-05', '11:00:00', 'Green Voice Auditorium', 'events/climate_seminar.jpg', 'upcoming', '2026-01-16 06:11:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_images`
+--
+
+CREATE TABLE `event_images` (
+  `image_id` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL,
+  `image_url` varchar(500) NOT NULL,
+  `display_order` int(11) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `event_images`
+--
+
+INSERT INTO `event_images` (`image_id`, `event_id`, `image_url`, `display_order`, `created_at`) VALUES
+(1, 1, 'events/image1.jpg', 1, '2026-01-16 06:39:57'),
+(2, 1, 'events/image2.jpg', 2, '2026-01-16 06:39:57'),
+(3, 1, 'events/image3.jpg', 3, '2026-01-16 06:39:57');
 
 -- --------------------------------------------------------
 
@@ -77,7 +128,7 @@ INSERT INTO `member_info` (`id`, `name`, `position`, `faculty`, `mail`, `mobile`
 ('26', 'Susmita Podder', 'Vice President', 'Faculty of Agriculture', 'susmitapodder49@gmail.com', '01314423372', 'Sultana Razia Hall', 'O(+ve)', '2003-05-13', 'images/susmita.jpg', 'https://www.facebook.com/giti.podder', '#', '#', '#'),
 ('27', 'Khairun Nahar', 'Assistant General Secretary', 'Faculty of Agriculture', 'lakamoni0@gmail.com', '01307344898', 'Sultana Razia Hall', 'B(+ve)', '2001-07-18', 'images/laka.jpg', 'https://www.facebook.com/khairun.nahar.792303', '#', '#', '#'),
 ('28', 'Md. Farhadul Islam Fahad', 'Office Secretary ', 'Faculty of Agriculture', 'fahadhuda427078@gmail.com', '01517837536', 'Shaheed Shamsul Haque Hall', 'O(+ve)', '2004-11-04', 'images/fahad.jpg', 'https://www.facebook.com/fahad.huda.2024', '#', '#', '#'),
-('29', 'Md Asadujjaman', 'Hospitality  Secretary', 'Faculty of Animal Husbandry', 'asadujjaman.2203067@bau.edu.bd', '01632530096', 'Isha Khan Hall', 'A(+ve)', '2002-01-12', 'images/asad.jpg', 'https://www.facebook.com/md.asadujjaman.577568', '#', '#', '#'),
+('29', 'Md Asadujjaman', 'Hospitality Secretary', 'Faculty of Animal Husbandry', 'asadujjaman.2203067@bau.edu.bd', '01632530096', 'Isha Khan Hall', 'A(+ve)', '2002-01-12', 'images/asad.jpg', 'https://www.facebook.com/md.asadujjaman.577568', '#', '#', '#'),
 ('30', 'Md. Mine Hossain', 'Organizing Secretary', 'Faculty of Agriculture', 'minehossain48@gmail.com', '01308929338', 'Isha Khan Hall', 'O(+ve)', '2002-05-30', 'images/mine.jpg', 'https://www.facebook.com/meharab.moho', '#', '#', '#'),
 ('31', 'Musarrat Jahan Richie', 'Media and Publication Secretary', 'Faculty of Agricultural Engineering and Technology', 'musarrat2002richie@gmail.com', '01623574214', 'Taposhi Rabeya Hall', 'B(+ve)', '2002-04-21', 'images/richie.jpg', 'https://www.facebook.com/musarrat.jahan.richie.2024', '#', '#', '#'),
 ('32', 'Arpita Rani Noyoni', 'Executive Member', 'Faculty of Agricultural Economics and Rural Sociology', 'noyoni.2204065@bau.edu.bd', '01846565498', 'Sultana Razia Hall', 'O(+ve)', '2003-03-19', 'images/arpita.jpg', 'https://www.facebook.com/arpita.noyoni', '#', '#', '#'),
@@ -158,7 +209,7 @@ INSERT INTO `teacher` (`teacher_id`, `name`, `position`, `designation`, `dept`, 
 (8, 'Dr. Mohammad Mofizur Rahman Jahangir', 'Teacher Advisor', 'Proffessor', 'Department of Soil Science', 'Faculty of Agriculture', '01719 648448', 'mmrjahangir@bau.edu.bd', 'teacher/mofiz.jpg', 'https://www.researchgate.net/profile/MMR_Jahangir', 'https://scholar.google.com/citations?hl=en&user=Okzx80oAAAAJ', '#', '#'),
 (9, 'Dr. Ziaul Haque', 'Teacher Advisor', 'Proffessor', 'Department of Anatomy and Histology', 'Faculty of Veterinary Science', '01793641483', 'zhaqueah80@bau.edu.bd', 'teacher/ziaul.jpg', '#', '#', '#', '#'),
 (10, 'Dr. Md. Badiuzzaman Khan', 'Teacher Advisor', 'Proffessor', 'Department of Environmental Science', 'Faculty of Agriculture', '01716615141', 'mbkhan@bau.edu.bd', 'teacher/badiuzzaman.jpg', 'https://www.researchgate.net/profile/Md_Khan123', 'https://scholar.google.com/citations?user=mq_CDZsAAAAJ&hl=en', '#', '#'),
-(11, '​​​​Dr. Md. Sabibul Haque​', 'Teacher Advisor', 'Proffessor', 'Department of Crop Botany', 'Faculty of Agriculture', '01716061745', 'mshaqcb@bau.edu.bd', 'teacher/sabib.jpg', 'https://www.researchgate.net/profile/Mohammad_Haque44', 'https://scholar.google.com/citations?user=phGLrt0AAAAJ', '#', 'https://www.facebook.com/sabibul.sabuj'),
+(11, 'Dr. Md. Sabibul Haque', 'Teacher Advisor', 'Proffessor', 'Department of Crop Botany', 'Faculty of Agriculture', '01716061745', 'mshaqcb@bau.edu.bd', 'teacher/sabib.jpg', 'https://www.researchgate.net/profile/Mohammad_Haque44', 'https://scholar.google.com/citations?user=phGLrt0AAAAJ', '#', 'https://www.facebook.com/sabibul.sabuj'),
 (12, 'Dr. Sabina Yeasmin', 'Teacher Advisor', 'Proffessor', 'Department of Agronomy', 'Faculty of Agriculture', '01618512082', 'sabinayeasmin@bau.edu.bd', 'teacher/sabina.jpg', 'https://www.researchgate.net/profile/Sabina_Yeasmin2', 'https://scholar.google.com/citations?user=mRgaY0kAAAAJ&hl=en&authuser=1', 'https://orcid.org/0000-0001-8410-2589', 'https://www.facebook.com/Yeasmin.Shalie'),
 (13, 'Dr. M. Nahid Sattar', 'Teacher Advisor', 'Proffessor', 'Department of Agricultural Economics', 'Faculty of Agricultural Economics & Rural Sociology', '01796266729', 'nahidsattar@bau.edu.bd', 'teacher/nahid.jpg', '#', 'https://scholar.google.com/citations?user=fHUanosAAAAJ&hl=en', '#', 'https://www.facebook.com/nahid.ankur'),
 (14, 'Mr. Md. Tariqul Islam', 'Teacher Advisor', 'Assistant Professor', 'Haor and Char Development Institute', ' ', '01787169520', 'tariq.hcdi@bau.edu.bd', 'teacher/tariq.jpg', 'https://www.researchgate.net/profile/Mdtariqul-Islam-2', 'https://scholar.google.com/citations?user=7yTtlXYAAAAJ&hl=en&oi=sra', '#', 'https://www.facebook.com/tariqul.islam.430222'),
@@ -168,6 +219,19 @@ INSERT INTO `teacher` (`teacher_id`, `name`, `position`, `designation`, `dept`, 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`event_id`);
+
+--
+-- Indexes for table `event_images`
+--
+ALTER TABLE `event_images`
+  ADD PRIMARY KEY (`image_id`),
+  ADD KEY `event_id` (`event_id`);
 
 --
 -- Indexes for table `member_info`
@@ -187,6 +251,32 @@ ALTER TABLE `student_ad`
 --
 ALTER TABLE `teacher`
   ADD PRIMARY KEY (`teacher_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `event_images`
+--
+ALTER TABLE `event_images`
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `event_images`
+--
+ALTER TABLE `event_images`
+  ADD CONSTRAINT `event_images_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`event_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
