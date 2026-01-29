@@ -26,8 +26,8 @@
           <i class="fas fa-bars"></i>
         </button>
 
-        <nav>
-          <ul id="nav-menu">
+        <nav id="nav-menu">
+          <ul >
             <li><a href="index.php">Executive Committee</a></li>
             <li><a href="teacher.php">Teacher Advisors</a></li>
             <li><a href="student.php">Student Advisors</a></li>

@@ -620,7 +620,7 @@ footer::before {
   }
 
   nav.show {
-    display: block;
+    display: block !important;
     animation: slideDown 0.3s ease-out;
   }
 
@@ -935,32 +935,5 @@ footer::before {
   nav a.active {
     outline: 2px solid #000000;
     outline-offset: 2px;
-  }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-white: #121212;
-    --text-dark: #e0e0e0;
-    --text-light: #a0a0a0;
-    --primary-extra-light: #1a3a2e;
-    --nav-bg: rgba(30, 60, 50, 0.95);
-  }
-
-  body {
-    background-color: var(--bg-white);
-  }
-
-  header {
-    background-color: rgba(30, 60, 50, 0.8);
-  }
-
-  nav a {
-    color: var(--text-dark);
-  }
-
-  .gv-card {
-    background: rgba(30, 40, 35, 0.5);
   }
 }

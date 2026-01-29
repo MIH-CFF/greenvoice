@@ -79,40 +79,6 @@ const teData = {
 document.addEventListener("DOMContentLoaded", () => {
   // Render gv cards
   rendergvCards("s_ad");
-
-  // Mobile Navigation Toggle
-  const navToggle = document.querySelector(".nav-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-  });
-
-  const navLinks = document.querySelectorAll("nav a");
-  const currentPath = window.location.pathname.split("/").pop(); // removes preceding folders if any
-
-  navLinks.forEach((link) => {
-    // Extract href path (e.g., "about.html")
-    const linkPath = link.getAttribute("href");
-
-    // Check if this link matches current page
-    if (
-      linkPath === currentPath ||
-      (linkPath === "index.php" && currentPath === "")
-    ) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-
-    // Optional: Close mobile menu when a link is clicked
-    link.addEventListener("click", () => {
-      if (navMenu.classList.contains("show")) {
-        navMenu.classList.remove("show");
-      }
-    });
-  });
-
   // gv card hover effect
   const gvCards = document.querySelectorAll(".gv-card");
   gvCards.forEach((card) => {
@@ -138,8 +104,8 @@ function rendergvCards(section) {
     card.className = "gv-card";
     card.innerHTML = `
             <a href="profile_st.php?name=${person.name}&position=${
-      person.position
-    }" style="text-decoration:none">
+              person.position
+            }" style="text-decoration:none">
             <div class="card-img">
                 ${
                   person.image

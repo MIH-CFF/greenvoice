@@ -176,5 +176,6 @@
     </footer>
         <script src="script.js">
         </script>
+        <script src="nav.js"></script>
   </body>
 </html>

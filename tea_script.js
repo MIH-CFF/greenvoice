@@ -106,40 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render gv cards
   rendergvCards("c_ad");
   rendergvCards("t_ad");
-
-  // Mobile Navigation Toggle
-  const navToggle = document.querySelector(".nav-toggle");
-  const navMenu = document.getElementById("nav-menu");
-
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-  });
-
-  const navLinks = document.querySelectorAll("nav a");
-  const currentPath = window.location.pathname.split("/").pop(); // removes preceding folders if any
-
-  navLinks.forEach((link) => {
-    // Extract href path (e.g., "about.html")
-    const linkPath = link.getAttribute("href");
-
-    // Check if this link matches current page
-    if (
-      linkPath === currentPath ||
-      (linkPath === "index.php" && currentPath === "")
-    ) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-
-    // Optional: Close mobile menu when a link is clicked
-    link.addEventListener("click", () => {
-      if (navMenu.classList.contains("show")) {
-        navMenu.classList.remove("show");
-      }
-    });
-  });
-
   // gv card hover effect
   const gvCards = document.querySelectorAll(".gv-card");
   gvCards.forEach((card) => {
@@ -166,8 +132,8 @@ function rendergvCards(section) {
     else card.className = "gv-card";
     card.innerHTML = `
             <a href="profile_teacher.php?name=${person.name}&dept=${
-      person.dept
-    }" style="text-decoration:none">
+              person.dept
+            }" style="text-decoration:none">
             <div class="card-img">
                 ${
                   person.image
@@ -200,7 +166,7 @@ function performSearch() {
     (person) =>
       person.name.toLowerCase().includes(searchTerm) ||
       person.position.toLowerCase().includes(searchTerm) ||
-      person.department.toLowerCase().includes(searchTerm)
+      person.department.toLowerCase().includes(searchTerm),
   );
 
   if (results.length > 0) {
@@ -225,12 +191,12 @@ function performSearch() {
                             <div class="search-result-info">
                                 <h3>${person.name}</h3>
                                 <p><strong>${person.position}</strong> | ${
-                          person.department
-                        }</p>
+                                  person.department
+                                }</p>
                                 <p>${person.email} | ${person.phone}</p>
                             </div>
                         </div>
-                    `
+                    `,
                       )
                       .join("")}
                 </div>

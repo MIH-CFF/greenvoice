@@ -50,5 +50,41 @@
         <p> @2025 GREEN VOICE. All rights reserved. Developed by 
         <a href="https://www.linkedin.com/in/muhammad-ishmamul-hoque-03a882284/" target="_blank">Muhammad Ishmamul Hoque</a></p>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  // Mobile Navigation Toggle
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  const navLinks = document.querySelectorAll("nav a");
+  const currentPath = window.location.pathname.split("/").pop(); // removes preceding folders if any
+
+  navLinks.forEach((link) => {
+    // Extract href path (e.g., "about.html")
+    const linkPath = link.getAttribute("href");
+
+    // Check if this link matches current page
+    if (
+      linkPath === currentPath ||
+      (linkPath === "index.php" && currentPath === "")
+    ) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+
+    // Optional: Close mobile menu when a link is clicked
+    link.addEventListener("click", () => {
+      if (navMenu.classList.contains("show")) {
+        navMenu.classList.remove("show");
+      }
+    });
+  });
+});
+      </script>
   </body>
 </html>
